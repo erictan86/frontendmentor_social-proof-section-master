@@ -1,0 +1,236 @@
+/*****
+
+
+Colors
+Primary
+- Very Dark Magenta: hsl(300, 43%, 22%) 
+- Soft Pink: hsl(333, 80%, 67%)
+
+Neutral
+- Dark Grayish Magenta: hsl(303, 10%, 53%) 
+- Light Grayish Magenta: hsl(300, 24%, 96%) 
+- White: hsl(0, 0%, 100%)
+
+Typography
+Body Copy
+- Font size: 15px
+Font
+- Family: Spartan
+- Weights: 400, 500, 700
+
+*****/
+
+:root {
+  /* COLORS */
+  /* primary */
+  --primary-vdm: hsl(300, 43%, 22%);
+  --primary-softpink: hsl(333, 80%, 67%);
+
+  /* neutral */
+  --neutral-dgraymag: hsl(303, 10%, 53%);
+  --neutral-lgraymag: hsl(300, 24%, 96%);
+  --neutral-white: hsl(0, 0%, 100%);
+
+  /* TYPOGRAPHY */
+  --bodyFont: 15px;
+
+  /* FONTS */
+  --fontFamily: "Spartan", sans-serif;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* reset default styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.img {
+  display: block;
+}
+
+body {
+  font-size: var(--bodyFont);
+  font-family: var(--fontFamily);
+  background-image: url("./images/bg-pattern-top-mobile.svg"),
+    url("./images/bg-pattern-bottom-mobile.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, contain;
+  background-position: top left, bottom right;
+}
+
+main {
+  margin: 3rem 2rem;
+}
+
+/* HERO SECTION */
+.hero-container {
+  text-align: center;
+}
+
+.hero-container h1 {
+  color: var(--primary-vdm);
+  padding: 1rem 4rem;
+}
+
+.hero-container p {
+  color: var(--neutral-dgraymag);
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+/* HERO SECTION BIG LAYOUT */
+@media screen and (min-width: 1200px) {
+  /* hero section */
+  .hero-container {
+    text-align: left;
+    max-width: 70%;
+  }
+
+  .hero-container h1 {
+    padding-left: 0;
+    padding-right: 3rem;
+    line-height: 1.2;
+    font-size: 3rem;
+  }
+
+  .hero-container p {
+    padding-left: 0;
+    font-size: 1rem;
+  }
+}
+
+/* RATING SECTION */
+.rating-container {
+  margin-bottom: 3rem;
+}
+.rating-item {
+  background-color: var(--neutral-lgraymag);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.rating-item img {
+  padding: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* RATING SECTION BIG LAYOUT */
+@media screen and (min-width: 1200px) {
+  /* rating section */
+  .first-rating {
+    position: relative;
+    top: 1rem;
+  }
+  .second-rating {
+    position: relative;
+    left: 2rem;
+    top: 1rem;
+  }
+
+  .third-rating {
+    position: relative;
+    left: 4rem;
+    top: 1rem;
+  }
+}
+
+.single-review-item {
+  padding: 2rem;
+  background-color: var(--primary-vdm);
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+
+.review-person {
+  display: flex;
+  padding: 1rem 0;
+}
+
+.review-person img {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  align-items: center;
+}
+
+.review-person-name-status {
+  padding: 0.5rem 2rem;
+  align-items: center;
+}
+
+.review-person-name-status h3 {
+  color: var(--neutral-white);
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.review-person-name-status p {
+  color: var(--neutral-dgraymag);
+  letter-spacing: 1px;
+}
+
+.actual-review {
+  color: var(--neutral-white);
+  line-height: 1.8;
+}
+
+/* BIG LAYOUT */
+@media screen and (min-width: 1200px) {
+  body {
+    background-image: url("./images/bg-pattern-top-desktop.svg"),
+      url("./images/bg-pattern-bottom-desktop.svg");
+    background-repeat: no-repeat no-repeat;
+    background-size: contain contain;
+    background-position: top left, bottom right;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1 fr;
+    max-width: 1440px;
+    margin: 3rem auto;
+  }
+
+  /* rating section */
+  .second-rating {
+    position: relative;
+    left: 2rem;
+  }
+
+  .third-rating {
+    position: relative;
+    left: 4rem;
+  }
+
+  /* review section */
+  .review-container {
+    grid-row-start: 2;
+    grid-column: span 2;
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  .second-review {
+    position: relative;
+    top: 1rem;
+  }
+
+  .third-review {
+    position: relative;
+    top: 2rem;
+  }
+}
