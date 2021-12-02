@@ -130,19 +130,25 @@ main {
 /* RATING SECTION BIG LAYOUT */
 @media screen and (min-width: 1200px) {
   /* rating section */
+  .rating-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+  }
+
   .first-rating {
     position: relative;
+    right: 6rem;
     top: 1rem;
   }
   .second-rating {
     position: relative;
-    left: 2rem;
+    right: 3rem;
     top: 1rem;
   }
 
   .third-rating {
     position: relative;
-    left: 4rem;
     top: 1rem;
   }
 }
@@ -203,17 +209,6 @@ main {
     grid-template-rows: 1fr 1 fr;
     max-width: 1440px;
     margin: 3rem auto;
-  }
-
-  /* rating section */
-  .second-rating {
-    position: relative;
-    left: 2rem;
-  }
-
-  .third-rating {
-    position: relative;
-    left: 4rem;
   }
 
   /* review section */
